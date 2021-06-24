@@ -1,0 +1,24 @@
+.barra {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion {
+    @include tablet {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    a {
+        color: $blanco;
+        display: block;
+        text-align: center;
+    }
+}

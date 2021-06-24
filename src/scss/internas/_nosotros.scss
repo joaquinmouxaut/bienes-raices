@@ -1,0 +1,22 @@
+.contenido-nosotros {
+    @include tablet {
+        @include grid( 2, 2rem )
+    }
+
+    
+    img {
+        @include tablet {
+            margin-top: 8rem;
+        }
+        
+    }
+}
+
+.texto-nosotros {
+    blockquote {
+        font-size: 2.5rem;
+        font-weight: $black;
+        margin: 0;
+        padding: 1rem 0 2rem 0;
+    }
+}
