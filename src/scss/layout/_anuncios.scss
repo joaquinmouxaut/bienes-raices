@@ -1,5 +1,5 @@
 .contenedor-anuncios {
-    @include tablet {
+    @include desktop {
         @include grid( 3, 2rem )
     }
 }
@@ -7,6 +7,17 @@
 .anuncio {
     background-color: $grisClaro;
     border: 1px solid $grisOscuro;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    @include desktop {
+        margin-bottom: 0;
+    }
 
     .contenido-anuncio {
         padding: 2rem;

@@ -1,19 +1,46 @@
 .barra {
-    display: flex;
-    flex-direction: column;
-    padding-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    .logo {
+        grid-column: 1 / 11;
+    }
+
+    .mobil-menu {
+        grid-column: 12/ 13;
+
+        img {
+            margin-top: 0.7rem;
+        }
+    }
+    
+    .navegacion {
+        grid-column: 10 / 13;
+    }
 
     @include tablet {
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
     }
 }
 
-.navegacion {
+.navegacion { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .3s ease-in-out, opacity .3s ease-in-out, height .3s linear;
+
     @include tablet {
-        display: flex;
+        flex-direction: row;
         align-items: center;
         gap: 2rem;
+        visibility: visible;
+        opacity: 1;
     }
 
     a {
@@ -21,4 +48,26 @@
         display: block;
         text-align: center;
     }
+
+    img {
+        width: 3rem;
+        filter: invert(1);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+//Menu Hamburguesa
+.mobil-menu {
+    @include tablet {
+        display: none;
+    }
+}
+
+.mostrar {
+    visibility: visible;
+    opacity: 1;
+    height: 17rem;
 }
