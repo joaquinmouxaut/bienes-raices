@@ -1,35 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienes Raices</title>
-    <link rel="stylesheet" href="/build/css/app.css">
-</head>
+<?php
+    require 'includes/funciones.php';
+    incluirTemplate( 'head' );
+?>
 <body>
-    <header class="header inicio">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-                <a class="logo" href="/">
-                    <img src="/build/img/logo.svg" alt="logo">
-                </a>
-
-                <div class="mobil-menu">
-                    <img src="/build/img/barras.svg" alt="menu responsive">
-                </div>
-
-                <nav class="navegacion">
-                    <a href="nosotros.html">Nosotros</a>
-                    <a href="anuncios.html">Anuncios</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="contacto.html">Contacto</a>
-                    <img src="/build/img/dark-mode.svg" alt="dark-mode" class="boton-dark-mode">
-                </nav>
-            </div>
-            <h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>
-        </div>
-    </header>
+    <?php incluirTemplate( 'header', true ); ?>
 
     <main class="contenedor seccion">
         <h2>Más Sobre Nosotros</h1>
@@ -77,7 +53,7 @@
                             <p>4</p>
                         </li>
                     </ul>
-                    <a href="anuncio.html" class="boton-amarillo-block">Ver Propiedad</a>
+                    <a href="anuncio.php" class="boton-amarillo-block">Ver Propiedad</a>
                 </div>
             </div>
 
@@ -101,7 +77,7 @@
                             <p>4</p>
                         </li>
                     </ul>
-                    <a href="anuncio.html" class="boton-amarillo-block">Ver Propiedad</a>
+                    <a href="anuncio.php" class="boton-amarillo-block">Ver Propiedad</a>
                 </div>
             </div>
 
@@ -125,20 +101,20 @@
                             <p>4</p>
                         </li>
                     </ul>
-                    <a href="anuncio.html" class="boton-amarillo-block">Ver Propiedad</a>
+                    <a href="anuncio.php" class="boton-amarillo-block">Ver Propiedad</a>
                 </div>
             </div>
         </div>
 
         <div class="alinear-derecha">
-            <a href="anuncios.html" class="boton-verde">Ver Todas</a>
+            <a href="anuncios.php" class="boton-verde">Ver Todas</a>
         </div>
     </section>
 
     <section class="imagen-contacto">
         <h2>Encuentra la casa de tus sueños</h2>
         <p>Llena el formulario y un asesor se pondrá en contacto contigo a la breveded</p>
-        <a href="contacto.html" class="boton-amarillo">Contáctanos</a>
+        <a href="contacto.php" class="boton-amarillo">Contáctanos</a>
     </section>
 
     <div class="contenedor seccion seccion-inferior">
@@ -148,7 +124,7 @@
             <article class="entrada-blog">
                 <img src="/build/img/blog1.webp" alt="blog1">
                 <div class="texto-entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Terraza en el techo de tu casa</h4>
                         <p>Escrito el: <span>20/10/21</span> por: <span>Admin</span></p>
                         <p>Consejos para construir una terraza en el techo de tu casa con los mejores materiales y ahorrando dinero</p>
@@ -159,7 +135,7 @@
             <article class="entrada-blog">
                 <img src="/build/img/blog2.webp" alt="blog2">
                 <div class="texto-entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Guia para la decoración de tu hogar</h4>
                         <p>Escrito el: <span>20/10/21</span> por: <span>Admin</span></p>
                         <p>Maximiza el espacio de tu hogar con esta guia, aprende a combinar muebles y colores para darle vida a tu espacio</p>
@@ -178,18 +154,7 @@
         </section>
     </div>
 
-    <footer class="footer seccion">
-        <div class="contenedor contenedor-footer">
-            <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-        </div>
-
-        <p class="copyright">Todos los Derechos Reservados &copy;</p>
-    </footer>
+    <?php incluirTemplate( 'footer' ); ?>
 
     <script src="/build/js/bundle.min.js"></script>
 </body>
