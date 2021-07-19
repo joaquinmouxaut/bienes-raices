@@ -8,6 +8,29 @@
     &.error {
         background-color: $amarilloOscuro1;
     }
+
+    &.exito {
+        background-color: $verdeOscuro1;
+    }
+}
+
+.propiedades {
+    margin-top: 4rem;
+    width: 100%;
+    border-spacing: 0;
+
+    thead {
+        background-color: $verdeOscuro1;
+
+        th {
+            color: $blanco;
+            padding: 2rem;
+        }
+    }  
+    
+    .imagen-tabla {
+        width: 10rem;
+    }
 }
 
 
