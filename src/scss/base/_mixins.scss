@@ -34,6 +34,7 @@
     display: $display;
     border-radius: 0rem;
     border: none;
+    width: 100%;
 
     &:hover {
         background-color: darken($bgColor, 5);

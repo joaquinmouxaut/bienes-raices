@@ -3,7 +3,8 @@
 }
 
 .boton-amarillo-block {
-    @include boton( $amarilloOscuro1, $negro, block )
+    @include boton( $amarilloOscuro1, $negro, block );
+    width: 100%;
 }
 
 .boton-verde {
