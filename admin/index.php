@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+    //Importar la conexion
+    require '../includes/config/database.php';
+    $db = conectarDB();
+
+    //Escribir el query
+    $query = 'SELECT * FROM propiedades';
+
+    //Consultar la BD
+    $resultadoConsulta = mysqli_query( $db, $query );
+
+    //Mostrar mensaje condicional 
     $resultado = $_GET['resultado'] ?? null;
+
+    //Incluir template
     require '../includes/funciones.php';
     incluirTemplate( 'head' );
 ?>
@@ -28,22 +41,29 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody><!-- Mostrar los resultados -->
+                <?php while( $propiedad = mysqli_fetch_assoc( $resultadoConsulta ) ) : ?>
                 <tr>
-                    <td>1</td>
-                    <td>Casa en la Playa</td>
-                    <td><img class="imagen-tabla" src="/imagenes/28899e3880e40c76f94698adb73e5257.jpg"></td>
-                    <td>$12.000.000</td>
+                    <td><?php echo $propiedad['id']; ?></td>
+                    <td><?php echo $propiedad['titulo']; ?></td>
+                    <td><img class="imagen-tabla" src="/imagenes/<?php echo $propiedad['imagen']; ?>"></td>
+                    <td>$<?php echo $propiedad['precio']; ?></td>
                     <td>
                         <a href="#" class="boton-amarillo-block">Eliminar</a>
-                        <a href="#" class="boton-verde-block">Actualizar</a>
+                        <a href="/admin/propiedades/actualizar.php?id=<?php echo $propiedad['id']; ?>" class="boton-verde-block">Actualizar</a>
                     </td>
                 </tr>
+                <?php endwhile ?>
             </tbody>
         </table>
     </main>
 
-    <?php incluirTemplate( 'footer' ); ?>
+    <?php
+        //Cerrar la conexión
+        mysqli_close( $db );
+
+        incluirTemplate( 'footer' ); 
+    ?>
 
     <script src="/build/js/bundle.min.js"></script>
 </body>
